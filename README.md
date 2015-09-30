@@ -1,2 +1,2 @@
 # jitterbunk
-spoof django app that allows users to bunk other users
+spoof django app that allows users to bunk other users.
