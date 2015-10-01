@@ -1,6 +1,9 @@
+{% load staticfiles %}
+
 <h1>Hi {{user.first_name}}!</h1>
 
-<img src="{{profile.photo}}"/>
+<!-- img src would be profile.photo.url if we could save photos to the 
+MEDIA_ROOT directory (calling .save() yields permission denied) -->
 <p>{{profile.user}}</p>
 
 <h3>{{user.first_name}}'s Bunk History</h3>

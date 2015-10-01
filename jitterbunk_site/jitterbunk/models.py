@@ -15,7 +15,7 @@ class Bunk(models.Model):
 class Profile(models.Model):
     """Represents a profile for a user."""
     user = models.ForeignKey(User)
-    photo = models.ImageField(width_field=200, height_field=200)
+    photo = models.ImageField(upload_to="profile_pics/")
     
     def __unicode__(self):
         return str(self.user)

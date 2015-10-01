@@ -103,3 +103,5 @@ LOGIN_URL = '/jitterbunk/'
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = '/jitterbunk/static/jitterbunk/images/'
+MEDIA_URL = '/images/'
