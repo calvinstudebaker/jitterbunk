@@ -1,11 +1,24 @@
 <h1>Hi {{user.first_name}}!</h1>
 
-<h3>Bunk Feed</h3>
+
 
 <form>
     {% csrf_token %}
-    <button id="logout" name="logout" value="Log Out" type="submit" formaction="/jitterbunk/logout/" formmethod="post">Log Out</button>
+    <button id="logoutButton" name="logout" value="Log Out" type="submit" 
+    formaction="/jitterbunk/logout/" formmethod="post">Log Out</button>
 </form>
+
+<!--shouldn't have a csrf token for the buttons with GET action -->
+<form>
+    <button id="profileButton" type="submit" 
+    formaction="/jitterbunk/profile" formmethod="get">View Profile</button>
+
+    <button id="bunkButton" type="submit" 
+    formaction="/jitterbunk/bunk" formmethod="get">Bunk</button>
+</form>
+
+
+<h3>Bunk Feed</h3>
 
 {% if bunk_list %}
 <ul>

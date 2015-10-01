@@ -1,0 +1,20 @@
+<h1>Hi {{user.first_name}}!</h1>
+
+<img src="{{profile.photo}}"/>
+<p>{{profile.user}}</p>
+
+<h3>{{user.first_name}}'s Bunk History</h3>
+
+
+{% if bunk_list %}
+<ul>
+    {% for bunk in bunk_list %}
+    <li>
+        {{bunk.from_user.username}} BUNKED {{bunk.to_user.username}} at {{bunk.time}}
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>No bunks yet!</p>
+{% endif %}
