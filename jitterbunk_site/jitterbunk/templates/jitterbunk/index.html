@@ -1,0 +1,21 @@
+<h1>Hi {{user.first_name}}!</h1>
+
+<h3>Bunk Feed</h3>
+
+<form>
+    {% csrf_token %}
+    <button id="logout" name="logout" value="Log Out" type="submit" formaction="/jitterbunk/logout/" formmethod="post">Log Out</button>
+</form>
+
+{% if bunk_list %}
+<ul>
+    {% for bunk in bunk_list %}
+    <li>
+        {{bunk.from_user.username}} BUNKED {{bunk.to_user.username}} at {{bunk.time}}
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>No bunks yet!</p>
+{% endif %}

@@ -1,0 +1,15 @@
+<h1>Hi {{user.first_name}}!</h1>
+
+{% if error_message %}
+<p><strong>{{error_message}}</strong></p>
+{%endif%}
+
+<h3>Who would you like to bunk? Enter a username below.</h3>
+<p>Oh yeah. Bunk 'em up goood.</p>
+
+<form action = "{% url 'jitterbunk:bunk' %}" method="post">
+{% csrf_token %}
+
+    <input type="text" name="username_to_bunk">
+    <input type="submit" value="BUNK">
+</form>

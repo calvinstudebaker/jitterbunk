@@ -1,0 +1,16 @@
+<center>
+    <h1>Welcome to Jitterbunk</h1>
+
+    {% if error_message %}
+    <p><strong>{{error_message}}</strong></p>
+    {%endif%}
+
+    <form action="{% url 'jitterbunk:login' %}" method="post">
+        {% csrf_token %}
+
+        Username: <input type="text" name="username" id="username">
+        Password: <input type="password" name="password" id="password">
+
+        <input type="submit" value="Login">
+    </form>
+</center>
